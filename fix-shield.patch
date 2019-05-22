@@ -1,0 +1,18 @@
+Original Author: rokups
+Original Patch: https://gist.github.com/rokups/55c1bd3114f3fb6bda0c7e448be8467a
+
+diff -baur  a/cpuset/commands/set.py b/cpuset/commands/set.py
+
+--- a/cpuset/commands/set.py	2019-05-22 03:51:50.567441395 -0400
++++ b/cpuset/commands/set.py	2019-05-22 03:56:21.624117634 -0400
+@@ -413,8 +413,8 @@
+     log.debug('modifying cpuset "%s"', nset.name)
+     if cpuspec: nset.cpus = cpuspec
+     if memspec: nset.mems = memspec
+-    if cx: nset.cpu_exclusive = cx
+-    if mx: nset.mem_exclusive = mx
++    # if cx: nset.cpu_exclusive = cx
++    # if mx: nset.mem_exclusive = mx
+ 
+ def active(name):
+     """check that cpuset by name or cset is ready to be used"""
